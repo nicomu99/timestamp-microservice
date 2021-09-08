@@ -29,36 +29,40 @@ app.get("/api/:date", function (req, res, next) {
 
 	let requestedTimestamp = req.params.date;
 
-	if(requestedTimestamp.match(/^\d+$/)) {
+	if(requestedTimestamp.match(/^\d+$/) || requestedTimestamp[0].match(/\-/)) {
 		//since the timestamp only contains numbers we can assume it is in unix format
-		req.unix = requestedTimestamp;
-		req.date = new Date(parseInt(requestedTimestamp))
-	} else if(requestedTimestamp.match("")){
-		//produces a date first from an input string and then parses it into unix
-		req.date = new Date(Date.now());
-		req.unix = Date.parse(req.date)/1000;
-	}
-	
-	console.log(req.date)
-
-	next();
-
-}, function(req, res) {
-
-	//checks again if the produced date is a valid date
-	if(isNaN(req.date.getTime())) {
-		//value is not a valid date
 		res.json({
-			error: "Invalid Date."
+			unix: parseInt(requestedTimestamp),
+			utc: new Date(parseInt(requestedTimestamp)).toUTCString()
 		})
-	} else {
-		req.date = req.date.toUTCString();
-		res.json({
-			unix: req.unix,
-			utc: req.date
-		});
+  } else {
+		let date = new Date(requestedTimestamp);
+
+		if(isNaN(date.getTime())) {
+			res.json({
+				error: "Invalid Date"
+			})
+		} else {
+			res.json({
+				unix: date.valueOf(),
+				utc: date.toUTCString()
+			})
+		}
 	}
 });
+
+// API endpoint serving date queries
+app.get("/api/", function (req, res, next) {
+
+	let date = new Date(Date.now());
+
+	res.json({
+		unix: date.valueOf(),
+		utc: date
+	})
+
+});
+
 
 
 // listen for requests :)
