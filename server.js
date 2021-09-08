@@ -28,9 +28,8 @@ app.get("/api/:date", function (req, res) {
 	req.date = new Date(req.params.date);
 	next();
 }, function(req, res) {
-	res.json({utc: req.date})
-}
-})
+	res.json({utc: req.date});
+});
 
 
 // listen for requests :)
