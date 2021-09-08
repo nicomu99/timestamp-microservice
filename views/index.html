@@ -1,26 +1,42 @@
 <!DOCTYPE html>
 
 <html>
-   <head>
-      <title>Timestamp Microservice</title>
-      <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
-      <link href="style.css" rel="stylesheet" type="text/css">
-   </head>
 
-   <body>
-    <h1>Timestamp Microservice</h1>
-    <hr />
-    <div class="container">
-      <h3>Example Usage:</h3>
-      <ul>
-        <li><a href="api/2015-12-25">[project url]/api/2015-12-25</a></li>
-        <li><a href="api/1451001600000">[project url]/api/1451001600000</a></li>
-      </ul>
+<head>
+	<title>Timestamp Microservice</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@300&display=swap" rel="stylesheet">
+	<link href="style.css" rel="stylesheet" type="text/css">
+	<meta charset="utf-8">
+</head>
 
-      <h3>Example Output:</h3>
-      <p>
-        <code>{"unix":1451001600000, "utc":"Fri, 25 Dec 2015 00:00:00 GMT"}</code>
-      </p>
-    </div>
-  </body>
+<body>
+	<div class="container">
+		<div class="center">
+			<h1>Timestamp Microservice</h1>
+		</div>
+
+		<div class="flex-row">
+			<h3>Example Usage</h3>
+			<div>
+				<p class="add-padding"><a href="api/2015-12-25">[project url]/api/2015-12-25</a></p>
+				<p class="add-padding"><a href="api/1451001600000">[project url]/api/1451001600000</a></p>
+			</div>
+		</div>
+
+
+		<div class="flex-row">
+			<h3>Example Output</h3>
+			<p>
+				<code>{<br> <span class="object-keys">"unix"</span>:
+					  <span class="property-values">1451001600000</span>,<br>
+					  <span class="object-keys">"utc"</span>:
+					  <span class="property-values">"Fri, 25 Dec 2015 00:00:00 GMT"</span> <br>
+					}</code>
+			</p>
+		</div>
+	</div>
+</body>
+
 </html>

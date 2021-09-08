@@ -1,0 +1,72 @@
+$code-bg: #1E1E1E;
+$object-keys: #9CDCFE;
+$property-values: #CE9178;
+
+body {
+	font-family: 'Urbanist', sans-serif;
+	color: white;
+    background: $code-bg;
+    margin: 0;
+}
+
+.container {
+	padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    h1 {
+        text-transform: uppercase;
+    }
+
+    h1, h3 {
+        color: $property-values;
+    }
+
+    .center {
+        text-align: center
+    }
+
+    a {
+        color: $object-keys;
+    }
+    
+    .flex-row {
+        display: flex;
+        flex-direction: row;
+        margin: 0 auto;
+        align-items: center;
+        width: 500px;
+
+        h3 {
+            margin-right: 20px
+        }
+    }
+
+    .add-padding {
+        padding-left: 20px;
+    }
+
+    code {
+        display: inline-block;
+        font-family: 'Courier New', monospace;
+        font-size: 14px;
+        padding: 10px;
+        background-color: $code-bg;
+        color: white;
+        text-align: left;
+        width: 350;
+        line-height: 20px;
+
+        .property-values {
+            color: $property-values;
+        }
+        
+        .object-keys {
+            color: $object-keys;
+        }
+    }
+}
+
+
+

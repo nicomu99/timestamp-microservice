@@ -1,46 +1,57 @@
-/****** Main Styling ******/
-
 body {
-	font-family: 'Roboto', sans-serif;
-	font-size: 16px;
-	color: #222;
-	background-color: #FaFaFa;
-	text-align: center;
-	line-height: 1.4em;
+  font-family: "Urbanist", sans-serif;
+  color: white;
+  background: #1E1E1E;
+  margin: 0;
 }
 
 .container {
-	padding: 0;
-	margin-top: 40px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.container h1 {
+  text-transform: uppercase;
+}
+.container h1, .container h3 {
+  color: #CE9178;
+}
+.container .center {
+  text-align: center;
+}
+.container a {
+  color: #9CDCFE;
+}
+.container .flex-row {
+  display: flex;
+  flex-direction: row;
+  margin: 0 auto;
+  align-items: center;
+  width: 500px;
+}
+.container .flex-row h3 {
+  margin-right: 20px;
+}
+.container .add-padding {
+  padding-left: 20px;
+}
+.container code {
+  display: inline-block;
+  font-family: "Courier New", monospace;
+  font-size: 14px;
+  padding: 10px;
+  background-color: #1E1E1E;
+  color: white;
+  text-align: left;
+  width: 350;
+  line-height: 20px;
+}
+.container code .property-values {
+  color: #CE9178;
+}
+.container code .object-keys {
+  color: #9CDCFE;
 }
 
-h3 {
-  margin-top: 30px;
-}
-
-hr {
-	margin: 25px;
-}
-
-.footer {
-	margin-top: 40px;
-}
-
-code {
-  font-family: monospace;
-  padding: 2px;
-  color: black;
-  background-color: #fff;
-}
-
-ul {
-	list-style-type: none;
-}
-
-li {
-  margin-bottom: 0.5em;
-}
-
-a {
-	color: #2574A9;
-}
+/*# sourceMappingURL=style.css.map */
