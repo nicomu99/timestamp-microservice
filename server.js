@@ -24,11 +24,33 @@ app.get("/api/hello", function (req, res) {
 	res.json({ greeting: 'hello API' });
 });
 
-app.get("/api/:date", function (req, res) {
+// API endpoint serving date queries
+app.get("/api/:date", function (req, res, next) {
+
+	//produce a date out of the string
 	req.date = new Date(req.params.date);
+
+	//parse the date into unix format
+	req.unix = Date.parse(req.date)/1000;
+
+	
+
 	next();
+
 }, function(req, res) {
-	res.json({utc: req.date});
+
+	//checks if the produced date is a valid date
+	if(isNaN(req.date.getTime())) {
+		//value is not a valid date
+		res.json({
+			error: "Invalid Date."
+		})
+	} else {
+		res.json({
+			unix: req.unix,
+			utc: req.date
+		});
+	}
 });
 
 
